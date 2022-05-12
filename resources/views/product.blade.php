@@ -59,23 +59,30 @@
             <div class="container" style="margin-top: 20px;">
             
                 <header class="section-heading" style="padding-bottom: 15px;">
-                    <h3 class="section-title">Legfrissebb termékeink</h3>
+                    <h3 class="section-title">{{$product['name']}} termék adatlapja</h3>
                 </header>
                 
                     
                 <div class="row">
                     
-                   @foreach ($products as $product)
-                    <div class="col-md-3 mt-2 mb-2">
-                        <div href="/product/{{$product['id']}}" class="card card-product-grid">
-                            <a href="/product/{{$product['id']}}" class="img-wrap"> <img style="width: 100%;" src="{{$product['image']}}"> </a>
-                            <figcaption class="info-wrap text-center">
-                                <a href="/product/{{$product['id']}}" class="h4 text-primary text-decoration-none mt-1">{{$product['name']}}</a>
-                                <div class="price mt-1 mb-2"><del class="text-danger"><em>{{number_format($product['price'], 0, '', '.')}} Ft</em></del><br><strong class="h5">{{number_format($product['sale_price'], 0, '', '.')}} Ft</strong></div> 
-                            </figcaption>
-                        </div>
+                    <div class="col-md-4 mt-2 mb-2">
+                        <img style="width: 100%;" src="{{$product['image']}}"> 
                     </div> 
-                   @endforeach
+
+                    <div class="col-md-4 mt-2 mb-2">
+                        <h3>Termékleírás:</h3>
+                        <p>{{$product['description']}}</p>
+                        <br>
+                        <h4>Ár:</h4>
+                        <div class="price mt-1 mb-2"><em class="text-danger">{{number_format($product['price'], 0, '', '.')}} Ft</em> helyett, most: <strong class="h5">{{number_format($product['sale_price'], 0, '', '.')}} Ft</strong></div> 
+                        <br>
+                        <h5>Megrendelés:</h5>
+                        <button type="button" class="btn btn-primary">Hozzáadás a kosárhoz</button>
+                    </div>
+                    
+                    <div class="col-md-4 mt-2 mb-2 text-center">
+                        <a href="/" class="btn btn-secondary"><< Visza a főoldalra</a>
+                    </div>
 
                     
                 </div> 
@@ -84,7 +91,7 @@
         </section>
         
 
-        <footer class="section-footer border-top bg-gray-100 ">
+        <footer style="position: fixed; bottom: 0; width: 100%;" class="section-footer border-top bg-gray-100 ">
             <div class="container " style="margin-top: 20px;">
               <section class="footer-bottom row ">
                 <div class="col-md-2">

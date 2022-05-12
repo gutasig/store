@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1abc7822bd9f28e9a62986817bf04f76",
+    "content-hash": "75d1147b9548fd70e15558e097399022",
     "packages": [
         {
             "name": "brick/math",
@@ -5397,6 +5397,141 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "laravel-lang/lang",
+            "version": "10.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laravel-Lang/lang.git",
+                "reference": "52513adc99eec1da1c64c5412c8f8ba5b48ff31a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/52513adc99eec1da1c64c5412c8f8ba5b48ff31a",
+                "reference": "52513adc99eec1da1c64c5412c8f8ba5b48ff31a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "conflict": {
+                "laravel-lang/publisher": "<12.0"
+            },
+            "require-dev": {
+                "dragon-code/pretty-array": "^4.0",
+                "dragon-code/simple-dto": "^2.3",
+                "dragon-code/support": "^6.1",
+                "ext-zip": "*",
+                "guzzlehttp/guzzle": "^7.3",
+                "laravel-lang/publisher": "^13.0",
+                "laravel/breeze": "^1.2",
+                "laravel/fortify": "^1.7",
+                "laravel/jetstream": "^2.3",
+                "laravel/ui": "^3.4",
+                "orchestra/testbench": "^7.0",
+                "php": "^8.1",
+                "phpunit/phpunit": "^9.5",
+                "symfony/finder": "^6.0",
+                "symfony/var-dumper": "^6.0",
+                "vlucas/phpdotenv": "^5.4.1"
+            },
+            "suggest": {
+                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
+                "laravel-lang/publisher": "Easy installation and update of translation files for your project",
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaravelLang\\Lang\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laravel-Lang Team",
+                    "homepage": "https://github.com/Laravel-Lang"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "support": {
+                "issues": "https://github.com/Laravel-Lang/lang/issues",
+                "source": "https://github.com/Laravel-Lang/lang"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/laravel-lang",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2022-05-04T14:15:27+00:00"
+        },
+        {
+            "name": "laravel/breeze",
+            "version": "v1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "0d7633380c81d0827f40f6064d38f8884f5c5441"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/0d7633380c81d0827f40f6064d38f8884f5c5441",
+                "reference": "0d7633380c81d0827f40f6064d38f8884f5c5441",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^8.42|^9.0",
+                "illuminate/support": "^8.42|^9.0",
+                "illuminate/validation": "^8.42|^9.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "time": "2022-03-26T16:06:30+00:00"
         },
         {
             "name": "laravel/sail",
