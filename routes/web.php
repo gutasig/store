@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,7 @@ use Illuminate\Support\Facades\App;
 |
 */
 
-Route::get('/', function () {
-    App::setLocale('hu');
-    return view('products');
-});
+Route::get('/', [ProductsController::class,'index']);
 
 Route::get('/dashboard', function () {
     App::setLocale('hu');
