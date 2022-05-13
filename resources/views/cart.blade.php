@@ -30,7 +30,7 @@
                                             <td class="align-middle">{{$product['product_name']}}</td>
                                             <td class="align-middle">{{number_format($product['price'], 0, '', '.')}} Ft</td>
                                             <td class="align-middle">
-                                                <a href="/del/{{$product['id']}}" onclick="return confirm('Biztosan hozzáadjuk a kosárhoz?')" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i> Törlés</a>
+                                                <a href="/del/{{$product['id']}}" onclick="return confirm('Biztosan töröljük ezt az elemet?')" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i> Törlés</a>
                                             </td>
                                         </tr>
                                     @endforeach    

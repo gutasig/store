@@ -17,6 +17,13 @@
                                 <a href="/product/{{$product['id']}}" class="h4 text-primary text-decoration-none mt-1">{{$product['name']}}</a>
                                 <div class="price mt-1 mb-2"><del class="text-danger"><em>{{number_format($product['price'], 0, '', '.')}} Ft</em></del><br><strong class="h5">{{number_format($product['sale_price'], 0, '', '.')}} Ft</strong></div> 
                             </figcaption>
+                            @if (Route::has('login'))
+                                @auth
+                                    <a href="/add/{{$product['id']}}" onclick="return confirm('Biztosan hozzáadjuk a kosárhoz?')" type="button" class="btn btn-dark">Hozzáadás a kosárhoz</a>
+                                @else
+                                    <button type="button" class="btn btn-secondary" onclick="alert('Csak regisztrált tagok számára elérhető a funkció!')">Hozzáadás a kosárhoz</button>
+                                @endauth
+                            @endif
                         </div>
                     </div> 
                    @endforeach
