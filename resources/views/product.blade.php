@@ -23,7 +23,7 @@
                         <h5>Megrendelés:</h5>
                         @if (Route::has('login'))
                                 @auth
-                                    <a href="/add/{{$product['id']}}" type="button" class="btn btn-primary">Hozzáadás a kosárhoz</a>
+                                    <a href="/add/{{$product['id']}}" onclick="return confirm('Biztosan hozzáadjuk a kosárhoz?')" type="button" class="btn btn-primary">Hozzáadás a kosárhoz</a>
                                 @else
                                     <button type="button" class="btn btn-secondary" onclick="alert('Csak regisztrált tagok számára elérhető a funkció!')">Hozzáadás a kosárhoz</button>
                                 @endauth
