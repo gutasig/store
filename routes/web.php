@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Intervention\Image\Facades\Image;
@@ -27,6 +28,33 @@ Route::get('/', [ProductsController::class,'index']);
 Route::get('/products', function () {
     $data = Product::where('available', 1)->orderBy('id')->paginate(12);
     return view('list',["products"=>$data]);
+});
+
+Route::get('/order', function () {
+    $cart = Cart::where('status', '0')->where('user_id', Auth::id())->orderBy('id')->get();
+    $user = User::where('id', Auth::id())->first();
+    $subPrice = 0;
+    foreach($cart as $d) {$subPrice += $d["price"];}
+
+    Order::insert([
+        'name' => $user->name,
+        'user_id' => Auth::id(), 
+        'products' => json_encode($cart),
+        'price' => $subPrice,
+        'address' => '....',
+        'status' => '0'
+    ]);
+    
+    Cart::where('status', '0')->where('user_id', Auth::id())->delete();
+
+    // itt lehet értesíteni e-mailben $user->email
+
+    return Redirect::to('/orders');
+});
+
+Route::get('/orders', function () {
+   /* $data = Order::where('status', 0)->orderBy('id')->paginate(12);
+    return view('orders',["orders"=>$data]);*/
 });
 
 Route::get('/product/{id}', function ($id) {
