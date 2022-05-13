@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\ProductsController;
 use App\Models\Product;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,11 @@ Route::get('/dashboard', function () {
     App::setLocale('hu');
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('logout', function () {
+    auth()->logout();
+    Session()->flush();
+    return Redirect::to('/');
+})->name('logout');
 
 require __DIR__.'/auth.php';
