@@ -22,10 +22,7 @@ class ProductsController extends Controller
         return view('products',["products"=>$data]);
     }
 
-    public function list(Request $request) {
-        $data = Product::where('available', 1)->orderBy('id')->paginate(12);
-        return view('products',["products"=>$data]);
-    }
+
 
   
 }
