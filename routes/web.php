@@ -18,6 +18,11 @@ use App\Models\Product;
 
 Route::get('/', [ProductsController::class,'index']);
 
+Route::get('/products', function () {
+    $data = Product::where('available', 1)->orderBy('id')->paginate(12);
+    return view('list',["products"=>$data]);
+});
+
 Route::get('/product/{id}', function ($id) {
     $data = Product::where('available', 1)
                     ->where('id', $id)
