@@ -21,11 +21,19 @@
                         <div class="price mt-1 mb-2"><em class="text-danger">{{number_format($product['price'], 0, '', '.')}} Ft</em> helyett, most: <strong class="h5">{{number_format($product['sale_price'], 0, '', '.')}} Ft</strong></div> 
                         <br>
                         <h5>Megrendelés:</h5>
-                        <button type="button" class="btn btn-primary">Hozzáadás a kosárhoz</button>
+                        @if (Route::has('login'))
+                                @auth
+                                    <button type="button" class="btn btn-primary">Hozzáadás a kosárhoz</button>
+                                @else
+                                    <button type="button" class="btn btn-secondary" onclick="alert('Csak regisztrált tagok számára elérhető a funkció!')">Hozzáadás a kosárhoz</button>
+                                @endauth
+                        @endif
+                        
                     </div>
                     
                     <div class="col-md-4 mt-2 mb-2 text-center">
-                        <a href="/" class="btn btn-secondary"><< Visza a főoldalra</a>
+                        <a href="/" class="btn btn-info" style="color: #fff;">Főoldal</a>
+                        <a href="/products" class="btn btn-info" style="color: #fff;">Termékek listája</a>
                     </div>
 
                     

@@ -40,12 +40,13 @@
                         <div class="col-lg-3 col-sm-12 text-right">
                             @if (Route::has('login'))
                                     @auth
-                                        <a href="{{ url('/dashboard') }}" class="btn btn-primary">Vezérlőpult</a>
+                                        <a href="{{ url('/dashboard') }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Kosár</a>
+                                        <a href="{{ url('/logout') }}" class="btn btn-secondary"><i class="fas fa-sign-out-alt"></i> Kijelentkezés</a>
                                     @else
-                                        <a href="{{ route('login') }}" class="btn btn-primary">Bejelentkezés</a>
+                                        <a href="{{ route('login') }}" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Bejelentkezés</a>
 
                                         @if (Route::has('register'))
-                                            <a href="{{ route('register') }}" class="btn btn-secondary">Regisztráció</a>
+                                            <a href="{{ route('register') }}" class="btn btn-secondary"><i class="fa fa-user"></i> Regisztráció</a>
                                         @endif
                                     @endauth
                             @endif
