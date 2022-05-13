@@ -1,10 +1,9 @@
 @include('header')
-        
         <section class="">
             <div class="container" style="margin-top: 20px;">
             
                 <header class="section-heading" style="padding-bottom: 15px;">
-                    <h3 class="section-title">Legfrissebb termékeink</h3>
+                    <h3 class="section-title">Termékek listázása</h3>
                 </header>
                 
                     
@@ -25,11 +24,12 @@
                     
                 </div> 
 
-                <div class="row" style="margin: 20px auto; text-align: center;">
-                    <a href="/products" class="btn btn-primary" style="width: 300px; display: block; margin: auto;">Összes termék megtekintése >></a>
-                </div>
+                <div class="row" style="margin: 20px auto;">
+                 {{ $products->links() }}
+                </div>  
+            
             </div>
+            
         </section>
-        
 
 @include('footer')
