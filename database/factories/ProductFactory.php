@@ -16,8 +16,8 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->domainWord;
-        $img = 'https://via.placeholder.com/300/'.strtoupper(str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT)).'/FFFFFF/?text='.$title;
+        $title = $this->faker->words($nb = 2, $asText = true); 
+        $img = 'https://dummyimage.com/300x300/'.strtoupper(str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT)).'/'.strtoupper(str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT)).'.png&text='.str_replace(' ', '+', $title);
         $price = round(rand(500, 20000), -2);
 
         $discounts = [5,10,15,20,30,50,75];
