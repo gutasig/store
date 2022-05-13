@@ -23,7 +23,7 @@
                         <h5>Megrendelés:</h5>
                         @if (Route::has('login'))
                                 @auth
-                                    <button type="button" class="btn btn-primary">Hozzáadás a kosárhoz</button>
+                                    <a href="/add/{{$product['id']}}" type="button" class="btn btn-primary">Hozzáadás a kosárhoz</a>
                                 @else
                                     <button type="button" class="btn btn-secondary" onclick="alert('Csak regisztrált tagok számára elérhető a funkció!')">Hozzáadás a kosárhoz</button>
                                 @endauth
@@ -32,8 +32,8 @@
                     </div>
                     
                     <div class="col-md-4 mt-2 mb-2 text-center">
-                        <a href="/" class="btn btn-info" style="color: #fff;">Főoldal</a>
-                        <a href="/products" class="btn btn-info" style="color: #fff;">Termékek listája</a>
+                        <a href="/" class="btn btn-info" style="width: 300px; display: block; margin: auto; color: #fff;">Főoldal</a> 
+                        <a href="/products" class="btn btn-primary" style="width: 300px; display: block; margin: 15px auto;">Termékek listája</a>
                     </div>
 
                     
