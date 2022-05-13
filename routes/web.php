@@ -53,8 +53,8 @@ Route::get('/order', function () {
 });
 
 Route::get('/orders', function () {
-   /* $data = Order::where('status', 0)->orderBy('id')->paginate(12);
-    return view('orders',["orders"=>$data]);*/
+    $data = Order::where('status', 0)->orderBy('id', 'DESC')->paginate(10);
+    return view('orders',["orders"=>$data]);
 });
 
 Route::get('/product/{id}', function ($id) {
@@ -86,6 +86,11 @@ Route::get('/add/{id}', function ($id) {
 Route::get('/del/{id}', function ($id) {
     Cart::where('id', $id)->delete();
     return Redirect::to('/dashboard');
+});
+
+Route::get('/delorder/{id}', function ($id) {
+    Order::where('id', $id)->delete();
+    return Redirect::to('/orders');
 });
 
 Route::get('/dashboard', function () {
